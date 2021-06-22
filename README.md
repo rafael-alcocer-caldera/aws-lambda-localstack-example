@@ -69,6 +69,9 @@ aws lambda create-function --endpoint-url http://localhost:4566 --function-name 
 ## To retrieve a list of Lambda functions
 aws lambda list-functions --endpoint-url http://localhost:4566
 
+## To Delete a Lambda Function
+aws lambda delete-function --function-name awslambdalocalstack --endpoint-url http://localhost:4566
+
 ## License
 
 All work is under Apache 2.0 license
