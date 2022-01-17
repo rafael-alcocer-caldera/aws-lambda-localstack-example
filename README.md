@@ -12,7 +12,7 @@ I wanted to do a real Lambda Function running in my local machine without having
 ## Requirements
 
 - You need Docker.
-- You need to pull the localstack image. I did this using the docker-compose.yml:
+- You need to pull the <b>localstack</b> image. I did this using the docker-compose.yml:
 
 ***
 
@@ -59,9 +59,31 @@ services:
 </code></pre>
 
 - You need to download the AWS Command Line Interface, AWSCLI64.msi (for Windows for example), to execute the commands.
+<pre><code>
+    [AWS Command Line Interface](https://aws.amazon.com/cli/)
+</code></pre>
+  
+- You need to be sure to have two files within <b>C:\Users\RAC\.aws\</b> (in Windows):
+  - config
+  - credentials 
+  
+- Within <b>config</b> file:
+<pre><code>
+    [default]
+    output = json
+    region = us-east-1
+    aws_access_key_id = rac
+    aws_secret_access_key = rac
+</code></pre>
 
-[AWS Command Line Interface](https://aws.amazon.com/cli/)
+- Within <b>credentials</b> file:
+<pre><code>
+    [default]
+    aws_access_key_id = rac
+    aws_secret_access_key = rac
+</code></pre>
 
+- You can change the name <b>rac</b> for <b>test<7b> instead or the name you want in both <b>config</b> and <b>credentials</b> files.
 
 ## Create the Lambda Function within LocalStack
 aws lambda create-function --endpoint-url http://localhost:4566 --function-name awslambdalocalstack --runtime java8 --handler rafael.alcocer.caldera.aws.lambda.handler.AwsLambdaHandler --region us-east-1 --zip-file fileb://aws-lambda-localstack-example-0.0.1-SNAPSHOT.jar --role arn:aws:iam::12345:role/ignoreme
