@@ -60,7 +60,7 @@ services:
 
 - You need to download the AWS Command Line Interface, AWSCLI64.msi (for Windows for example), to execute the commands. [AWS Command Line Interface](https://aws.amazon.com/cli/)
   
-- You need to be sure to have two files within <b>C:\Users\RAC\.aws\</b> (in Windows):
+- You need to be sure to have two files within <b>C:\Users\RAC\.aws</b> (in Windows):
   - config
   - credentials 
   
